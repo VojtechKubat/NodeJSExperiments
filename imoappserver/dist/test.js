@@ -15,9 +15,6 @@ var objWithoutLength = {
   a: 10
 };
 
-getLength(objWithLength);
-// getLength(objWithoutLength);
-
 var test = function test(msg) {
   console.log(getLength(objWithLength));
   console.log(msg);
