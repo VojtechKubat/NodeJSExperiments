@@ -1,0 +1,1 @@
+{"version":3,"sources":["../server/udemytut.js"],"names":["udemytut","console","log"],"mappings":";;;;;AAEA,IAAMA,WAAW,SAAXA,QAAW,GAAM;AACnBC,YAAQC,GAAR,CAAY,gBAAZ;AACH,CAFD;;kBAIeF,Q","file":"udemytut.js","sourcesContent":["/* @flow */\n\nconst udemytut = () => {\n    console.log(\"Udemy Tutorial\");\n};\n\nexport default udemytut;"]}
