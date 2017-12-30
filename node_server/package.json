@@ -1,18 +1,18 @@
 {
-  "name": "imoappserver",
+  "name": "weatherapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Udemy course app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/dev",
     "nodemon": "nodemon --exec npm run start",
     "clean": "rm -rf dist",
-    "build": "npm run clean && mkdir dist && babel ./server -s -d dist",
+    "build": "npm run clean && mkdir dist && babel ./server -s -d dist --copy-files",
     "production": "npm run build && node bin/production"
   },
   "keywords": [],
-  "author": "",
+  "author": "infeld",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -24,7 +24,9 @@
     "nodemon": "^1.14.3"
   },
   "dependencies": {
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
     "lodash": "^4.17.4",
-    "yargs": "^10.0.3"
+    "request": "^2.83.0"
   }
 }

@@ -1,33 +1,49 @@
 'use strict';
 
-var _test = require('./test');
+// import notes from './notes';
+// import yargs from 'yargs';
+// import _ from 'lodash';
 
-var _test2 = _interopRequireDefault(_test);
+// const argv = yargs.argv;
 
-var _udemytut = require('./udemytut');
+// console.log('yargs: ', argv);
 
-var _udemytut2 = _interopRequireDefault(_udemytut);
-
-var _http = require('http');
-
-var _http2 = _interopRequireDefault(_http);
-
-var _fs = require('fs');
-
-var _fs2 = _interopRequireDefault(_fs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// test("HELLO WORLD!");
-// udemytut();
-// for (var i = 0; i < 10; i++) {
-//     fs.appendFile("greetings.txt", "Hello world\n/n", (err) => {
-//         console.log(">>> fs error: " + err);
-//     });
+// if (argv._.length > 0) {
+//     switch (argv._[0]) {
+//         case 'add': {
+//             if (typeof(argv.title) === 'string' && typeof(argv.body) === 'string') {
+//                 notes.addNote(argv.title, argv.body);
+//             } else {
+//                 console.log(">>> add >>> something is missing - title and body are mandatory");
+//             }
+//             break;
+//         }
+//         case 'list': {
+//             notes.listNotes();
+//             break;
+//         }
+//         case 'read': {
+//             if (typeof(argv.title) === 'string') {
+//                 notes.getNote(argv.title);
+//             } else {
+//                 console.log(">>> read >>> something is missing - title is mandatory");
+//             }
+//             break;
+//         }
+//         case 'remove': {
+//             if (typeof(argv.title) === 'string') {
+//                 notes.removeNote(argv.title);
+//             } else {
+//                 console.log(">>> remove >>> something is missing - title is mandatory");
+//             }
+//             break;
+//         }
+//         default: {
+//             console.log(">>> unknown command");
+//         }
+//     }
 // }
 
-_fs2.default.appendFile('message.txt', 'data to append\n', function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-});
+console.log('Staging app');
+console.log('Finishing app');
 //# sourceMappingURL=index.js.map

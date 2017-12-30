@@ -15,7 +15,6 @@ var objWithoutLength = {
 }
 
 const test = (msg: string) => {
-  console.log(getLength(objWithLength));
   console.log(msg);
 };
 
