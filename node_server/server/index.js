@@ -3,7 +3,6 @@
 import express from 'express';
 import hbs from 'hbs';
 import fs from 'fs';
-// import  
 
 var app = express();
 var underconstruction = true;
@@ -15,7 +14,7 @@ app.set('view engine', 'hbs');
 // redefines view property, because we're using babel and exporting js files into dist folder
 app.set('views', __dirname+'/views');      
 
-app.use()
+// app.use()
 
 // custom middleware
 app.use((req: Request, res, next) => {

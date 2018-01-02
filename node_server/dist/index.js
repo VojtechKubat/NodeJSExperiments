@@ -14,9 +14,8 @@ var _fs2 = _interopRequireDefault(_fs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import  
-
 var app = (0, _express2.default)();
+
 var underconstruction = true;
 
 _hbs2.default.registerPartials(__dirname + '/views/partials');
@@ -25,6 +24,8 @@ _hbs2.default.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 // redefines view property, because we're using babel and exporting js files into dist folder
 app.set('views', __dirname + '/views');
+
+// app.use()
 
 // custom middleware
 app.use(function (req, res, next) {
