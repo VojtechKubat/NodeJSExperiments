@@ -14,18 +14,18 @@ MongoClient.connect('mongodb://localhost:27017', (error, client)=>{
     console.log('> SUCCESS > connected to MongoDB server');
 
     var db = client.db('TodoApp');
-    // db.collection('todos')
-    // // .find({completed: false})
-    // // .find({_id: new ObjectID('5a4bd620f0583cec09d4e164')})
-    // .find()
-    // .toArray()
-    // .then((docs) => {
-    //     console.log('Todos');
-    //     console.log(JSON.stringify(docs, undefined, 2));
-    // })
-    // .catch((err) => {
-    //     console.log('Unable to fetch todos, err');
-    // });
+    db.collection('todos')
+    // .find({completed: false})
+    // .find({_id: new ObjectID('5a4bd620f0583cec09d4e164')})
+    .find()
+    .toArray()
+    .then((docs) => {
+        console.log('Todos');
+        console.log(JSON.stringify(docs, undefined, 2));
+    })
+    .catch((err) => {
+        console.log('Unable to fetch todos, err');
+    });
 
     db.collection('todos')
     .find()
