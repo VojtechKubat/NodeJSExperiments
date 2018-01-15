@@ -29,7 +29,7 @@ MongoClient.connect('mongodb://localhost:27017', (error, client)=>{
 
     // findOneAndDelete
     console.log('findOneAndDelete - text == Hello world');
-    db.collection('todos').findOneAndDelete({text: 'Hello world'})
+    db.collection('todos').findOneAndDelete({text: 'NEW THING TO DO'})
     .then((result) => {
         console.log(result);
     });

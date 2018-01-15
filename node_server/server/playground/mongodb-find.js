@@ -17,7 +17,7 @@ MongoClient.connect('mongodb://localhost:27017', (error, client)=>{
     db.collection('todos')
     // .find({completed: false})
     // .find({_id: new ObjectID('5a4bd620f0583cec09d4e164')})
-    .find()
+    .find({},{limit: 2, skip: 3})
     .toArray()
     .then((docs) => {
         console.log('Todos');
@@ -31,7 +31,7 @@ MongoClient.connect('mongodb://localhost:27017', (error, client)=>{
     .find()
     .count()
     .then((count) => {
-        console.log('Todos:', count);
+        console.log('Todos total count:', count);
         // console.log(JSON.stringify(docs, undefined, 2));
     })
     .catch((err) => {
