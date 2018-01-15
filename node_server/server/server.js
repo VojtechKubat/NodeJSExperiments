@@ -11,6 +11,19 @@ app.use(bodyParser.json());
 
 app.post('/todos', (req, res) => {
     console.log('Request body:', req.body);         // body is available because of bodyParser middleware
+    var todo = new Todo({
+        text: req.body.text
+    });
+
+    todo.save().then(
+        (doc)=>{
+            res.send(doc);
+        },
+        (err)=>{
+            res.status(400).send(err);
+            console.log('>>> Error', err);
+        }
+    );
 });
 
 
