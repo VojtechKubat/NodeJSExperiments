@@ -2,7 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import mongoose from './db/mongoose';
-import Todo from './models/todo'
+import Todo from './models/todo';
+import { ObjectID } from 'mongodb';
 
 var app = express();
 
@@ -14,7 +15,6 @@ app.post('/todos', (req, res) => {
     var todo = new Todo({
         text: req.body.text
     });
-
     todo.save().then(
         (doc)=>{
             res.send(doc);
@@ -24,6 +24,40 @@ app.post('/todos', (req, res) => {
             console.log('>>> Error', err);
         }
     );
+});
+
+app.get('/todos', (req, res) => {
+    Todo.find().then(
+        (doc)=>{
+            res.send({
+                doc,
+                code: 'success'
+            });
+        },
+        (err)=>{
+            res.status(400).send(err);
+            console.log('>>> Error', err);            
+        }
+    );
+});
+
+app.get('/todos/:id', (req, res)=>{
+    Todo.find({_id: new ObjectID(req.params.id)}).then(
+        (doc)=>{
+            res.send({
+                doc,
+                code: 'success'
+            });
+        },
+        (err)=>{
+            res.status(400).send(err);
+            console.log('>>> Error', err);            
+        }
+    );
+
+
+    // res.send(req.params);
+    // req.params.id
 });
 
 
