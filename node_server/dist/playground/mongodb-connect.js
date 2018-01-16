@@ -14,25 +14,24 @@ _mongodb.MongoClient.connect('mongodb://localhost:27017', function (error, clien
 
     console.log('> SUCCESS > connected to MongoDB server');
 
-    // var now = new Date().toString();
+    var now = new Date().toString();
 
-    // var todoObj = {
-    //     text: 'Something to do',
-    //     completed: false,
-    //     // created: `${now}`,
-    //     // lastUpdate: `${now}`
-    // };
+    var todoObj = {
+        text: 'NEW THING TO DO',
+        completed: false
+        // created: `${now}`,
+        // lastUpdate: `${now}`
+    };
 
-    // var db = client.db('TodoApp');
+    var db = client.db('TodoApp');
 
-    // db.collection('todos').insertOne(todoObj, 
-    //     (error, result) => {
-    //     if (error) {
-    //         console.log('>>> ERROR - insert one >>>', error);
-    //     }
-    //     console.log('Result:', result.ops[0]._id);
-    //     console.log('Created at:', result.ops[0]._id.getTimestam());
-    // });
+    db.collection('todos').insertOne(todoObj, function (error, result) {
+        if (error) {
+            return console.log('>>> ERROR - insert one >>>', error);
+        }
+        console.log('Result:', result.ops);
+        console.log('Created at:', result.ops[0]._id.getTimestamp());
+    });
 
     client.close();
 });

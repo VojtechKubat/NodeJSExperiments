@@ -17,7 +17,7 @@ _mongodb.MongoClient.connect('mongodb://localhost:27017', function (error, clien
     db.collection('todos')
     // .find({completed: false})
     // .find({_id: new ObjectID('5a4bd620f0583cec09d4e164')})
-    .find().toArray().then(function (docs) {
+    .find({}, { limit: 2, skip: 3 }).toArray().then(function (docs) {
         console.log('Todos');
         console.log(JSON.stringify(docs, undefined, 2));
     }).catch(function (err) {
@@ -25,7 +25,7 @@ _mongodb.MongoClient.connect('mongodb://localhost:27017', function (error, clien
     });
 
     db.collection('todos').find().count().then(function (count) {
-        console.log('Todos:', count);
+        console.log('Todos total count:', count);
         // console.log(JSON.stringify(docs, undefined, 2));
     }).catch(function (err) {
         console.log('Unable to fetch todos, err');
